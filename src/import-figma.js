@@ -1,4 +1,3 @@
-import { get } from 'lodash'
 import { Api, fileId } from './utils'
 import importColors from './imports/colors'
 import importFonts from './imports/fonts'
@@ -11,9 +10,9 @@ const startImport = async () => {
   console.log('\x1b[32m', 'import from figma', '\x1b[0m')
   const file = await Api.getFile(fileId)
 
-  const colors = '' // await importColors(file)
-  const fonts = '' // await importFonts(file)
-  const spacers = '' // await importSpacers(file)
+  const colors = await importColors(file)
+  const fonts = await importFonts(file)
+  const spacers = await importSpacers(file)
 
   await importSvgIcons(file)
 
