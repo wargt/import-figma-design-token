@@ -1,4 +1,8 @@
-export const colors = {
+type Colors = {
+  [key: string]: string
+}
+
+export const colors: Colors = {
   "red-100": "#f15b5b",
   "red-40": "#e9aeae",
   "red-60": "#ed9393",
@@ -20,7 +24,17 @@ export const colors = {
   "black-60": "#7c7777",
   "black-80": "#595252"
 };
-export const fonts = {
+type Fonts = {
+  [key: string]: {
+    fontFamily: string,
+    fontWeight: number,
+    fontSize: number,
+    lineHeight: string,
+    letterSpacing: number
+  }
+}
+
+export const fonts: Fonts = {
   "font-20": {
     "fontFamily": "Roboto",
     "fontWeight": 400,
@@ -50,7 +64,14 @@ export const fonts = {
     "letterSpacing": 0
   }
 };
-export const spacers = {
+type Spacers = {
+  [key: string]: {
+    width: number,
+    height: number
+  }
+}
+
+export const spacers: Spacers = {
   "s": {
     "width": 20,
     "height": 20

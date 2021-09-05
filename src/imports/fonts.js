@@ -26,5 +26,15 @@ export default async function colors (file) {
   })
 
   const jsonData = JSON.stringify(res, null, 2)
-  return `export const fonts = ${jsonData};`
+  return `type Fonts = {
+  [key: string]: {
+    fontFamily: string,
+    fontWeight: number,
+    fontSize: number,
+    lineHeight: string,
+    letterSpacing: number
+  }
+}
+
+export const fonts: Fonts = ${jsonData};`
 }

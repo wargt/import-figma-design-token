@@ -20,5 +20,9 @@ export default async function colors (file) {
   })
 
   const jsonData = JSON.stringify(res, null, 2)
-  return `export const colors = ${jsonData};`
+  return `type Colors = {
+  [key: string]: string
+}
+
+export const colors: Colors = ${jsonData};`
 }

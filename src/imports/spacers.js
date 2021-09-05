@@ -23,5 +23,12 @@ export default async function spacers (file) {
   })
 
   const jsonData = JSON.stringify(res, null, 2)
-  return `export const spacers = ${jsonData};`
+  return `type Spacers = {
+  [key: string]: {
+    width: number,
+    height: number
+  }
+}
+
+export const spacers: Spacers = ${jsonData};`
 }
